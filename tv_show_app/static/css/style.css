@@ -1,0 +1,52 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, td, th {
+    border: 2px solid black;
+    padding: 5px;
+}
+
+
+
+table{
+    border-collapse: collapse;
+}
+
+th{
+    color: white;
+    background-color:blue;
+}
+
+tr:nth-child(even){
+    background-color: rgb(227, 227, 255);
+}
+
+
+#canvas{
+    width: 40%;
+    margin: 50px auto;
+} 
+
+label{
+    margin-top: 40px;
+    width: 100%;
+    display: inline;
+}
+
+.full{
+    display: flex;
+    width: 100%;
+}
+
+.half{
+    display: inline-block;
+    width: 40%;
+    margin-right: 40px;
+    justify-content: space-between;
+    }
+
+input, textarea{
+    display: flex;
+    margin-top: 10px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <div id="canvas">
+        <h1>{{header}}</h1>
+        <a href="/">Go Back</a>
+        <form action="{{path}}" method="POST">
+            {% csrf_token %}
+            <label class='full'>Title</label>
+            <input class='full' type="text" name="title" value={{this_show.title}}>
+            <label class='half'>Network<input type="text" name="network" value="{{this_show.network}}"></label>
+            
+            <label class='half'>Release Date<input type="date" name="release" value = {{this_show.release_date}}></label>
+            
+            <label class='full'>Description</label>
+            <textarea class='full' name="description" cols="30" rows="10">{{this_show.desc}}</textarea>
+            <input type="submit" value={{update}}>
+        </form>
+
+        {% if "Update" == "Update" %}
+            <br><br>
+            <a href="..">Go Back</a>
+        {% endif %}
+    </div>
+    
+    
+</body>
+</html>
