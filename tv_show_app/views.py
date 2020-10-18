@@ -31,14 +31,15 @@ def enter_show(request):
     context = {
         "header": "Add a New Show",
         "update": "Create",
-        "path": "add/",
+        "path": "/shows/create/",
     }
     return render(request, 'add_edit_show.html', context)
 
 def add_new(request):
     Shows.objects.create(title = request.POST['title'], network = request.POST['network'], release_date = request.POST['release'], desc = request.POST['description'] )
     show_id = Shows.objects.get(title = request.POST['title'])
-    return redirect ('/',show_id)
+    show_id = show_id.id
+    return redirect (f'/shows/{show_id}')
 
 def destroy(request, show_id):
     Shows.objects.get(id=show_id).delete()
@@ -56,3 +57,6 @@ def update_show(request, show_id):
     this_path = f"/shows/{show_id}"
     
     return redirect(this_path)
+
+def default(request):
+    return redirect('/shows')
