@@ -8,28 +8,32 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>All Shows</h1>
-    <table>
-        <tr>
-            <th>id</th>
-            <th>Title</th>
-            <th>Network</th>
-            <th>Release Date</th>
-            <th>Actions</th>
-        </tr>
-        {% for show in all_shows %}
+    <div id="canvas">
+        <h1>All Shows</h1>
+        <table>
             <tr>
-                <td>{{show.id}}</td>
-                <td>{{show.title}}</td>
-                <td>{{show.network}}</td>
-                <td>{{show.release_date}}</td>
-                <td> <a href="{{show.id}}">Show</a> | <a href="{{show.id}}/edit">Edit</a> | <a href="{{show.id}}/destroy">Delete</a></td>
+                <th>id</th>
+                <th>Title</th>
+                <th>Network</th>
+                <th>Release Date</th>
+                <th>Actions</th>
             </tr>
-        {% endfor %}
-       
-    </table>
+            {% for show in all_shows %}
+                <tr>
+                    <td>{{show.id}}</td>
+                    <td>{{show.title}}</td>
+                    <td>{{show.network}}</td>
+                    <td>{{show.release_date}}</td>
+                    <td> <a href="{{show.id}}">Show</a> | <a href="{{show.id}}/edit">Edit</a> | <a href="{{show.id}}/destroy">Delete</a></td>
+                </tr>
+            {% endfor %}
+        
+        </table>
 
-    <a href="new/">Add a New Show</a>
+        <a href="new/">Add a New Show</a>
+
+    </div>
+    
     
 </body>
 </html>

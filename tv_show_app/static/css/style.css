@@ -24,8 +24,8 @@ tr:nth-child(even){
 
 
 #canvas{
-    width: 40%;
-    margin: 50px auto;
+    width: 60%;
+    margin: 50px 100px;
 } 
 
 label{
