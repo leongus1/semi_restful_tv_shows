@@ -18,7 +18,7 @@
             <input class='full' type="text" name="title" value="{{this_show.title}}">
             <label class='half'>Network<input type="text" name="network" value="{{this_show.network}}"></label>
             
-            <label class='half'>Release Date<input type="date" name="release" value = "{{this_show.release_date | date:'m/d/Y'}}"></label>
+            <label class='half'>Release Date<input type="date" name="release" value = "{{this_show.release_date|date:'Y-m-d'}}"></label>
             
             <label class='full'>Description</label>
             <textarea class='full' name="description" cols="30" rows="10">{{this_show.desc}}</textarea>
