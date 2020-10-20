@@ -10,6 +10,10 @@
 </head>
 <body>
     <div id="canvas">
+        {% for message in messages %}
+            <p class="{{message.tags}}">{{message}}</p>
+        {% endfor %}
+
         <a href="/">Go to List</a>
         <h1>TV Show #{{this_show.id}}</h1>
         <p>Title: {{this_show.title}} </p>

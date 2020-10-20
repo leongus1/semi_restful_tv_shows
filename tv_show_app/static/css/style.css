@@ -50,3 +50,15 @@ input, textarea{
     display: flex;
     margin-top: 10px;
 }
+
+.error{
+    color: red;
+    font-style: italic;
+    font-size: small;
+}
+
+.success{
+    color: green;
+    font-style: italic;
+    font-size: small;
+}

@@ -9,10 +9,20 @@
     <title>{{update}}</title>
 </head>
 <body>
+    
 
     <div id="canvas">
         <h1>{{header}}</h1>
         <a href="/">Go to List</a>
+
+        {% if messages %}
+            <ul class="messages"> 
+            {% for message in messages%}
+                <li class="{{message.tags}}">{{message}}</li>
+
+            {% endfor %}
+            </ul>
+        {% endif %}
         <form action="{{path}}" method="POST">
             {% csrf_token %}
             <label class='full'>Title</label>
@@ -23,6 +33,7 @@
             
             <label class='full'>Description</label>
             <textarea class='full' name="description" cols="30" rows="10">{{this_show.desc}}</textarea>
+            <input type="hidden" name="create_or_update" value={{update}}>
             <input type="submit" value="{{update}}">
         </form>
 
